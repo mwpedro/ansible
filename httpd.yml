@@ -1,1 +1,16 @@
-teste
+---
+- hosts: all
+  vars:
+    http_port: 80
+    max_clients: 200
+  tasks:
+    - name: Garanta que o serviço está habilitado e iniciado.
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+  handlers:
+    - name: restart apache
+      service:
+        name: httpd
+        state: restarted
