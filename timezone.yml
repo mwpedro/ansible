@@ -1,0 +1,9 @@
+---
+- name: timezone
+  hosts: all
+  tasks:
+  - name: Ajuste de Timezone 
+    timezone:
+      name: America/Sao_Paulo
+      
+...      
