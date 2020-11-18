@@ -2,7 +2,7 @@
 - name: httpd
   hosts: all
   tasks:
-  - name: Install apache packages 
+  - name: Remove apache packages 
     yum:
       name: httpd
       state: removed
