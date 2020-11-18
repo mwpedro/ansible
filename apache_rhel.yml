@@ -6,16 +6,16 @@
     yum:
       name: httpd
       state: present
-  - name: ensure httpd is running
+  - name: certifique-se de que o httpd esteja rodando
     service:
       name: httpd 
       state: started
-  - name: Open port 80 for http access
+  - name: Abra a porta 80 para acesso http
     firewalld:
       service: http
       permanent: true
       state: enabled
-  - name: Restart the firewalld service to load in the firewall changes
+  - name: Reinicie o serviço firewalld para carregar nas alterações do firewall
     service: 
       name: firewalld 
       state: restarted
